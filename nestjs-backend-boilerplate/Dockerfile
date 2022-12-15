@@ -1,4 +1,4 @@
-FROM node:16-alpine as builder
+FROM node:16 as builder
 WORKDIR /home/node/app
 COPY ./package.json ./
 COPY ./yarn.lock ./
