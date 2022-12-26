@@ -21,15 +21,15 @@
 		"i18next-browser-languagedetector": "^6.0.1",
 		"i18next-http-backend": "^1.0.21",
 		"lodash": "^4.17.20",
-		"node-sass": "4.14.1",
+		"node-sass": "^8.0.0",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-i18next": "^11.7.3",
 		"react-lazyload": "^3.1.0",
 		"react-loading": "^2.0.3",
 		"react-loading-overlay": "^1.0.1",
-		"react-router-dom": "^5.2.0",
-		"react-scripts": "4.0.0",
+		"react-router-dom": "^6.6.0",
+		"react-scripts": "^5.0.1",
 		"react-toastify": "^6.1.0",
 		"typescript": "4.0.5",
 		"web-vitals": "^0.2.4"
@@ -43,18 +43,6 @@
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
 		"prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,scss,css,json}'",
 		"isready": "yarn prettier && yarn lint && yarn build"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.{js,jsx,ts,tsx,css,scss}": [
-			"prettier --write 'src/**/*.{js,jsx,ts,tsx,scss,css,json}'",
-			"yarn lint",
-			"git add"
-		]
 	},
 	"eslintConfig": {
 		"extends": [
@@ -75,9 +63,10 @@
 		]
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^4.8.1",
-		"@typescript-eslint/parser": "^4.8.1",
+		"@typescript-eslint/eslint-plugin": "^5.3.1",
+		"@typescript-eslint/parser": "^5.3.1",
 		"babel-eslint": "^10.1.0",
+		"eslint": "7.32.0",
 		"eslint-config-airbnb-typescript": "^12.0.0",
 		"eslint-config-prettier": "^6.15.0",
 		"eslint-config-react-app": "^6.0.0",

@@ -31,8 +31,9 @@ export class AuthController {
   }
 
   @Post('login')
-  async login(@Body() loginDto: LoginDto): Promise<ResponseDto<ResponseLogin>> {
-    return { data: await this.authService.login(loginDto) };
+  // async login(@Body() loginDto: LoginDto): Promise<ResponseDto<ResponseLogin>> {
+  async login(@Body() {username, password} : {username: string, password: string}){
+    return { data: await this.authService.login({username, password}) };
   }
 
   @Post('refresh-access-token')

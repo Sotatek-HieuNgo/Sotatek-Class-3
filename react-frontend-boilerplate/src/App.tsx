@@ -1,18 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './App.scss';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const App: FC = () => {
     return (
         <div className="App">
-            <header className="App-header" onClick={() => toast.success('Hello World!')}>
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Template React with Typescript</p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
+            <h1>HOMEPAGE</h1>
         </div>
     );
 };

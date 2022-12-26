@@ -24,32 +24,31 @@ export class AuthService {
   ) {
   }
 
-  async login(loginDto: LoginDto): Promise<ResponseLogin> {
-    const checkMessage = await checkRecoverSameAddress({
-      address: loginDto.address,
-      message: loginDto.message,
-      signature: loginDto.signature,
-    });
-    if (!checkMessage) {
-      throw new HttpException(httpErrors.ACCOUNT_HASH_NOT_MATCH, HttpStatus.BAD_REQUEST);
-    }
+  async login({username, password}: {username: string, password: string}) {
+    // const checkMessage = await checkRecoverSameAddress({
+    //   address: loginDto.address,
+    //   message: loginDto.message,
+    //   signature: loginDto.signature,
+    // });
+    // if (!checkMessage) {
+    //   throw new HttpException(httpErrors.ACCOUNT_HASH_NOT_MATCH, HttpStatus.BAD_REQUEST);
+    // }
 
-    let user: UserEntity;
+    // let user: UserEntity;
 
-    if (!(await this.userService.checkUserAddressExisted(loginDto.address))) {
-      const newUserDto: { address; signature; message } = loginDto;
-      user = await this.userService.createUser(newUserDto);
-    } else {
-      user = await this.userService.findUserByAddress(loginDto.address);
-    }
+    // if (!(await this.userService.checkUserAddressExisted(loginDto.address))) {
+    //   const newUserDto: { address; signature; message } = loginDto;
+    //   user = await this.userService.createUser(newUserDto);
+    // } else {
+    //   user = await this.userService.findUserByAddress(loginDto.address);
+    // }
 
-    const accessToken = this.generateAccessToken({ userId: user.id });
-    const refreshToken = await this.generateRefreshToken(accessToken.accessToken);
+    // const accessToken = this.generateAccessToken({ userId: user.id });
+    // const refreshToken = await this.generateRefreshToken(accessToken.accessToken);
 
     return {
-      ...accessToken,
-      ...refreshToken,
-      ...user,
+      username,
+      password
     };
   }
 

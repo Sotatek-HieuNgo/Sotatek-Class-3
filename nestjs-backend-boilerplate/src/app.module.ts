@@ -1,3 +1,4 @@
+import { AuthModule } from './modules/auth/auth.module';
 import { Logger, MiddlewareConsumer, Module } from '@nestjs/common';
 
 import Modules from 'src/modules';
